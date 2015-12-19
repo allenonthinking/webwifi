@@ -2,10 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="Content-Type" Content="application/json">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-	<meta name="format-detection" content="telephone=no">
-	<meta http-equiv="pragma" content="no-cache" />
 	<title>WIFI</title>
 	<link rel="stylesheet" href="lib/ratchet/css/ratchet.min.css">
 	<link rel="stylesheet" href="lib/ratchet/css/ratchet-theme-android.min.css">
@@ -15,15 +12,18 @@
 </head>
 <body class="bg">
 	<div class="s0-content">
-		<a href="wifi-spot.html" class="btn-a">WI-FI热点</a>
-		<a href="wifi-out.html" class="btn-a">接入外网</a>
-		<a href="wifi-setting.html" class="btn-a">高级选项</a>
-		<a href="wifi-update.html" class="btn-a">升级固件</a>
+		<a shref="wifi-spot.html" class="item btn-a">WI-FI热点</a>
+		<a shref="wifi-out.html" class="item btn-a">接入外网</a>
+		<a shref="wifi-setting.html" class="item btn-a">高级选项</a>
+		<a shref="wifi-update.html" class="item btn-a">升级固件</a>
 		<img src="images/logo.png" alt="" class="logo">
 	</div>
 	<script type="text/javascript" src="js/zepto.min.js"></script>
 	<script type="text/javascript" src="lib/ratchet/js/ratchet.min.js"></script>
-	
-
+	<script type="text/javascript">
+		$('.item').on('tap', function(){
+			location.href = $(this).attr('shref');
+		})
+	</script>
 </body>
 </html>
