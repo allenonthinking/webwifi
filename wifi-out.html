@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<title>接入外网</title>
+	<link rel="stylesheet" href="lib/ratchet/css/ratchet.min.css">
+	<link rel="stylesheet" href="lib/ratchet/css/ratchet-theme-android.min.css">
+	<link rel="stylesheet" href="lib/ratchet/css/ratchet-theme-ios.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg">
+	<div class="s1-content">
+		<header class="ctrl clearfix">
+			<a href="index.html" class="icon icon-left pull-left"></a>
+			<div class="s1-t">接入外网</div>
+		</header>
+		<div class="s1-cont-in">
+			<div class="out-lab">接入方式</div>
+			<div class="segmented-control">
+				<a class="control-item active" href="#item1mobile">
+					无线
+				</a>
+				<a class="control-item" href="#item2mobile">
+					有线
+				</a>
+				<a class="control-item" href="#item3mobile">
+					3/4G
+				</a>
+			</div>
+			<div class="card card-out">
+				<div id="item1mobile" class="control-content active">
+					<div class="out-lab">可用WIFI列表</div>
+					<div class="wifi-list-wrap">
+						<div class="wifi-item clearfix selected">
+							<div class="col1">TP-LINK-CAI</div>
+							<div class="col2">
+								<img src="images/wifi-network-4.png" alt="">
+							</div>
+							<div class="col3"></div>
+						</div>
+						<div class="wifi-item clearfix">
+							<div class="col1">TP-LINK-CAI</div>
+							<div class="col2">
+								<img src="images/wifi-network-2.png" alt="">
+							</div>
+							<div class="col3">
+							</div>
+						</div>
+						<div class="wifi-item clearfix">
+							<div class="col1">TP-LINK-CAI</div>
+							<div class="col2">
+								<img src="images/wifi-network-3.png" alt="">
+							</div>
+							<div class="col3">
+							</div>
+						</div>
+						<div class="wifi-item clearfix">
+							<div class="col1">TP-LINK-CAI</div>
+							<div class="col2">
+								<img src="images/wifi-network-0.png" alt="">
+							</div>
+							<div class="col3">
+							</div>
+						</div>
+						<div class="wifi-item clearfix">
+							<div class="col1">TP-LINK-CAI</div>
+							<div class="col2">
+								<img src="images/wifi-network-0.png" alt="">
+							</div>
+							<div class="col3">
+							</div>
+						</div>
+						<div class="wifi-item clearfix">
+							<div class="col1">TP-LINK-CAI</div>
+							<div class="col2">
+								<img src="images/wifi-network-1.png" alt="">
+							</div>
+							<div class="col3">
+							</div>
+						</div>
+						<div class="wifi-item clearfix">
+							<div class="col1">TP-LINK-CAI</div>
+							<div class="col2">
+								<img src="images/wifi-network-0.png" alt="">
+							</div>
+							<div class="col3">
+							</div>
+						</div>
+						<div class="wifi-item clearfix">
+							<div class="col1">TP-LINK-CAI</div>
+							<div class="col2">
+								<img src="images/wifi-network-0.png" alt="">
+							</div>
+							<div class="col3">
+							</div>
+						</div>
+						<div class="wifi-item clearfix">
+							<div class="col1">TP-LINK-CAI</div>
+							<div class="col2">
+								<img src="images/wifi-network-0.png" alt="">
+							</div>
+							<div class="col3">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="item2mobile" class="control-content">
+					<select class="out-2-sel">
+						<option value="dynamic">动态获取IP地址</option>
+						<option value="static">静态设置IP地址</option>
+						<option value="pppoe">PPPOE拨号连接</option>
+					</select>
+					<div class="card card-out">
+						<div id="static" class="card-in out-card-static">
+							<div class="s1-cl clearfix">
+								<label>ip地址</label>
+								<div class="s1-cl-r">
+									<input type="text">
+								</div>
+							</div>
+							<div class="s1-cl clearfix">
+								<label>子网掩码</label>
+								<div class="s1-cl-r">
+									<input type="text">
+								</div>
+							</div>
+							<div class="s1-cl clearfix">
+								<label>网关</label>
+								<div class="s1-cl-r">
+									<input type="text">
+								</div>
+							</div>
+							<div class="s1-cl clearfix">
+								<label>首选DNS</label>
+								<div class="s1-cl-r">
+									<input type="text">
+								</div>
+							</div>
+							<div class="s1-cl clearfix">
+								<label>备先DNS</label>
+								<div class="s1-cl-r">
+									<input type="text">
+								</div>
+							</div>
+						</div>
+						<div id="pppoe" class="card-in out-card-pppoe">
+							<div class="s1-cl clearfix">
+								<label>用户名</label>
+								<div class="s1-cl-r">
+									<input type="text">
+								</div>
+							</div>
+							<div class="s1-cl clearfix">
+								<label>密码</label>
+								<div class="s1-cl-r change-password">
+									<input type="password">
+									<i></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="item3mobile" class="control-content">
+					<select class="out-3-sel">
+						<option value="auto">自动拨号</option>
+						<option value="ctrl">手动拨号</option>
+					</select>
+					<div class="card card-out">
+						<div id="ctrl" class="card-3-in out-card-pppoe">
+							<div class="s1-cl clearfix">
+								<label>用户名</label>
+								<div class="s1-cl-r">
+									<input type="text">
+								</div>
+							</div>
+							<div class="s1-cl clearfix">
+								<label>密码</label>
+								<div class="s1-cl-r change-password">
+									<input type="password">
+									<i></i>
+								</div>
+							</div>
+							<div class="s1-cl clearfix">
+								<label>APN</label>
+								<div class="s1-cl-r">
+									<input type="text">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="s1-cl-btnw">
+				<button class="btn btn-h1 btn-primary">保存</button>
+			</div>
+		</div>
+	</div>
+	<div class="zp">
+		<div class="zp-content">
+			<div class="change-password">
+				<input id="password" type="password" placeholder="密码">
+				<i style="height:40px;"></i>
+			</div>
+			
+			<div class="clearfix">
+				<a _label="cancel" class="btn btn-default">取消</a>
+				<a _label="sure" class="btn btn-primary pull-right">确定</a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="lib/ratchet/js/ratchet.min.js"></script>
+	
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			console.log(1)
+			/* 无线 */ 
+			var $items = $('.wifi-item'),
+				obj = {};
+
+			$items.on('tap', function(){
+				if($(this).hasClass('selected')){
+					$(this).removeClass('selected');
+					obj.selItem = '';
+				} else {
+					obj.selItem = $(this);
+					$('.zp').css({display:'block'});
+					
+				}
+			});
+
+			//取消
+			$('[_label="cancel"]').on('tap', function(){
+				$('.zp').css({display:'none'});
+				$('#password').val('');
+			});
+
+			//确定
+			$('[_label="sure"]').on('tap', function(){
+				$items.removeClass('selected');
+				obj.selItem.addClass('selected');
+				$('.zp').css({display:'none'});
+				
+			});
+
+			/* 有线 */ 
+			$('.out-2-sel').on('change',function(){
+				$('.card-in').css({display:'none'});
+				$('#' + $(this).val()).css({display: 'block'});
+			});
+
+			/* 3/4G */ 
+			$('.out-3-sel').on('change',function(){
+				$('.card-3-in').css({display:'none'});
+				$('#' + $(this).val()).css({display: 'block'});
+			});
+		});
+	</script>
+</body>
+</html>

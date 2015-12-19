@@ -37,30 +37,6 @@ function isMobile() {
 
 	return isMobile;
 }
-/*格式化时间*/
-function formateDate(date,format) {
-	var dateTime = new Date(date);
-	var o = {  
-		"y" : dateTime.getFullYear(),				  //年
-		"M" : dateTime.getMonth()+1,                 //月份   
-		"d" : dateTime.getDate(),                    //日   
-		"h" : dateTime.getHours(),                   //小时   
-		"m" : dateTime.getMinutes(),                 //分   
-		"s" : dateTime.getSeconds(),                 //秒   
-		// "q" : Math.floor((dateTime.getMonth()+3)/3), //季度   
-		// "S"  : dateTime.getMilliseconds()             //毫秒   
-	};
-
-	var strDate = '';
-	strDate = o.y + '年' + o.M + '月' + o.d + '日 ' + o.h + ':' + o.m;
-
-	if(format=='yy/MM/dd'){
-		strDate = o.y + '/' + o.M + '/' + o.d;
-	} 
-	
-	return  strDate;
-	//Object.prototype.toString.call(param);
-}
 
 function alt(msg){
 	var $node = $('<div class="alt">'+
