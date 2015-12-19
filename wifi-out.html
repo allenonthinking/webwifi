@@ -12,7 +12,7 @@
 <body class="bg">
 	<div class="s1-content">
 		<header class="ctrl clearfix">
-			<a href="index.html" class="icon icon-left pull-left"></a>
+			<span class="back icon icon-left pull-left"></span>
 			<div class="s1-t">接入外网</div>
 		</header>
 		<div class="s1-cont-in">
@@ -212,11 +212,9 @@
 	</div>
 	<script type="text/javascript" src="js/zepto.min.js"></script>
 	<script type="text/javascript" src="lib/ratchet/js/ratchet.min.js"></script>
-	
-	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/common.js?id=1.2"></script>
 	<script type="text/javascript">
 		$(function(){
-			console.log(1)
 			/* 无线 */ 
 			var $items = $('.wifi-item'),
 				obj = {};
@@ -257,6 +255,7 @@
 				$('.card-3-in').css({display:'none'});
 				$('#' + $(this).val()).css({display: 'block'});
 			});
+
 		});
 	</script>
 </body>

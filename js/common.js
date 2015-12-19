@@ -9,6 +9,9 @@ $(function(){
 			$input.attr('type','password');
 			$(this).removeClass('open');
 		}
-		
 	});
+
+	$('.back').on('tap', function(){
+		location.href = 'index.html';
+	})
 })
