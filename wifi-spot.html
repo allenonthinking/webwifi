@@ -31,13 +31,12 @@
 				<div class="s1-cl-r">
 					<!-- <input type="text"> -->
 					<select class="ly-select" name="" id="">
-						<option value="">1</option>
-						<option value="">1</option>
-						<option value="">1</option>
+						<option value="PSK2">PSK2</option>
+						<option value="NONE">NONE</option>
 					</select>
 				</div>
 			</div>
-			<div class="s1-cl clearfix">
+			<div id="spot-password" class="s1-cl clearfix">
 				<label>密码</label>
 				<div class="s1-cl-r change-password">
 					<input type="password">
@@ -52,5 +51,18 @@
 	<script type="text/javascript" src="lib/ratchet/js/ratchet.min.js"></script>
 	<script type="text/javascript" src="js/zepto.min.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript">
+		$(function(){
+			/* when chioce none  password hiden */ 
+			$('.ly-select').on('change',function(){
+				if($(this).val()=="NONE"){
+					$('#spot-password').css({display: 'none'});
+				}else{
+					$('#spot-password').css({display: 'block'});
+				}
+			});
+
+		});
+	</script>
 </body>
 </html>
