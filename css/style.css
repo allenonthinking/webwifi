@@ -45,6 +45,9 @@ input[readonly]{
 .right{
 	float: right !important;
 }
+.s-content{
+	padding:10px 10px 10px;
+}
 .s0-content{
 	padding:50px 20px 10px;
 }
