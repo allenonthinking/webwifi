@@ -12,18 +12,13 @@
 </head>
 <body class="bg">
 	<div class="s0-content">
-		<a shref="wifi-spot.html" class="item btn-a">WI-FI热点</a>
-		<a shref="wifi-out.html" class="item btn-a">接入外网</a>
-		<a shref="wifi-setting.html" class="item btn-a">高级选项</a>
-		<a shref="wifi-update.html" class="item btn-a">升级固件</a>
+		<a href="wifi-spot.html" class="item btn-a"  data-ignore="push">WI-FI热点</a>
+		<a href="wifi-out.html" class="item btn-a"  data-ignore="push">接入外网</a>
+		<a href="wifi-setting.html" class="item btn-a"  data-ignore="push">高级选项</a>
+		<a href="wifi-update.html" class="item btn-a"  data-ignore="push">升级固件</a>
 		<img src="images/logo.png" alt="" class="logo">
 	</div>
 	<script type="text/javascript" src="js/zepto.min.js"></script>
 	<script type="text/javascript" src="lib/ratchet/js/ratchet.min.js"></script>
-	<script type="text/javascript">
-		$('.item').on('tap', function(){
-			location.href = $(this).attr('shref');
-		})
-	</script>
 </body>
 </html>

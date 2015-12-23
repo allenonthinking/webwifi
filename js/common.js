@@ -11,7 +11,4 @@ $(function(){
 		}
 	});
 
-	$('.back').on('tap', function(){
-		location.href = 'index.html';
-	})
 })
