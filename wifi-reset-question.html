@@ -17,28 +17,23 @@
 	<div class="s1-content">
 		<header class="ctrl clearfix">
 			<a href="wifi-set-question.html" class="icon icon-left pull-left" data-ignore="push"></a>
-			<div class="s1-t">密码重置</div>
+			<div class="s1-t">找回密码问题重置</div>
 		</header>
-		<div class="s1-cont-in repassword">
+		<div class="s1-cont-in">
 			<div class="s1-cl clearfix">
-				<label>新密码</label>
-				<div class="s1-cl-r change-password">
-					<input  id="reset-password" type="password">
-					<i></i>
-				</div>
+				<select class="seting-sel">
+					<option value="">故乡叫什么名字？</option>
+					<option value="">在哪里上的学？</option>
+					<option value="">今天多大</option>
+				</select>
 			</div>
 			<div class="s1-cl clearfix">
-				<label>确认新密码</label>
-				<div class="s1-cl-r change-password">
-					<input  id="reset-password2" type="password">
-					<i></i>
-				</div>
+				<input type="text" class="seting-input">
 			</div>
 			
 			<div class="s1-cl-btnw">
-				<button id="reset-pwd-submit" class="btn btn-h1 btn-primary">保存</button>
+				<button id="reset-question-submit" class="btn btn-h1 btn-primary">下一步</button>
 			</div>
-
 			
 		</div>
 	</div>
@@ -46,8 +41,8 @@
 	<script type="text/javascript" src="js/zepto.min.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
 	<script type="text/javascript">
-		$('#reset-pwd-submit').on('tap', function(){
-			//location.href=""
+		$('#reset-question-submit').on('tap', function(){
+			location.href="wifi-reset-pwd.html";
 		})
 	</script>
 </body>
