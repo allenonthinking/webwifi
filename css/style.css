@@ -387,12 +387,46 @@ input[readonly]{
 	background-color: #007aff;
 	font-size: 12px;
 }
+.s2-cl{
+	padding:10px;
+	border:1px solid #d0d0d0;
+	background-color: #e7e7e7;
+	background-image: -webkit-linear-gradient(top, #eff0f1, #cdcfd1);
+	margin:10px 0;
+	border-radius: 5px;
+}
+.s2-cl label{
+	width: auto;
+	float: left;
+}
+.seting-sel {
+    border: 1px solid #d0d0d0;
+    height: 42px;
+    padding: 5px 10px;
+    background-image: url(../images/arr-b.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    margin-bottom: 0;
+}
+.s2-cl .tog{
+	float: right;
+}
+.s1-cl .seting-input {
+    display: block;
+    height: 40px;
+    width: 100%;
+    border: 1px solid #d0d0d0;
+    margin-bottom: 0;
+    padding: 5px 8px;
+    border-radius: 2px;
+}
 
-
-
-
-
-
+.repassword .s1-cl label{
+	width: 75px;
+}
+.repassword .s1-cl .s1-cl-r{
+	padding-left: 75px;
+}
 
 
 

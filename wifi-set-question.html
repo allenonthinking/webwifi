@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 	<meta name="format-detection" content="telephone=no">
 	<meta http-equiv="pragma" content="no-cache" />
-	<title>高级设置</title>
+	<title>密码找回设置</title>
 	<link rel="stylesheet" href="lib/ratchet/css/ratchet.min.css">
 	<link rel="stylesheet" href="lib/ratchet/css/ratchet-theme-android.min.css">
 	<link rel="stylesheet" href="lib/ratchet/css/ratchet-theme-ios.css">
@@ -16,25 +16,19 @@
 <body class="bg">
 	<div class="s1-content">
 		<header class="ctrl clearfix">
-			<a href="index.html" class="icon icon-left pull-left" data-ignore="push"></a>
-			<div class="s1-t">高级设置</div>
+			<a href="wifi-setting.html" class="icon icon-left pull-left" data-ignore="push"></a>
+			<div class="s1-t">密码找回设置</div>
 		</header>
 		<div class="s1-cont-in">
-			<!-- <div class="segmented-control">
-				<a class="type-setting control-item active">SAMBA</a>
-				<a class="type-setting control-item">DMS</a>
-			</div> -->
-			<div class="s2-cl clearfix">
-				<label>调式web界面</label>
-				<div class="s1-cl-r">
-					<div class="tog">
-						开<div class="tog-in">关</div>
-					</div>
-				</div>
+			<div class="s1-cl clearfix">
+				<select class="seting-sel">
+					<option value="dynamic">故乡叫什么名字？</option>
+					<option value="static">在哪里上的学？</option>
+					<option value="pppoe">今天多大</option>
+				</select>
 			</div>
-			
-			<div class="s3-cl clearfix">
-				<a href="wifi-set-question.html" class="item btn-a"  data-ignore="push">找回密码问题设置</a>
+			<div class="s1-cl clearfix">
+				<input type="text" class="seting-input">
 			</div>
 			
 			<div class="s1-cl-btnw">
@@ -48,7 +42,7 @@
 	<script type="text/javascript" src="js/common.js"></script>
 	<script type="text/javascript">
 		$('#setting-submit').on('tap', function(){
-			location.href="wifi-set-question.html";
+			location.href="wifi-reset-pwd.html";
 		})
 	</script>
 </body>

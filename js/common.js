@@ -14,5 +14,17 @@ $(function(){
 			$(this).addClass('active').siblings().removeClass('active');
 	});
 
+	var $tog = $('.tog'),
+		$togIn = $('.tog-in');
+	$('.tog').on('tap',function(){
+
+		if ($togIn.hasClass('open')) {
+			$togIn.removeClass('open');
+		} else {
+			$togIn.addClass('open');
+		}
+	});
+
+
 
 })

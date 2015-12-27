@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" Content="application/json">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="pragma" content="no-cache" />
+	<title>高级设置</title>
+	<link rel="stylesheet" href="lib/ratchet/css/ratchet.min.css">
+	<link rel="stylesheet" href="lib/ratchet/css/ratchet-theme-android.min.css">
+	<link rel="stylesheet" href="lib/ratchet/css/ratchet-theme-ios.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body class="bg">
+	<div class="s1-content">
+		<header class="ctrl clearfix">
+			<a href="index.html" class="icon icon-left pull-left" data-ignore="push"></a>
+			<div class="s1-t">高级设置</div>
+		</header>
+		<div class="s1-cont-in">
+			<div class="segmented-control">
+				<a class="type-setting control-item active">SAMBA</a>
+				<a class="type-setting control-item">DMS</a>
+			</div>
+			<div class="s1-cl clearfix">
+				<label>用户名</label>
+				<div class="s1-cl-r">
+					<input id="setting-username" readonly type="text" value="huazhong">
+				</div>
+			</div>
+			
+			<div class="s1-cl clearfix">
+				<label>密码</label>
+				<div class="s1-cl-r change-password">
+					<input  id="setting-password" type="password">
+					<i></i>
+				</div>
+			</div>
+			<div class="s1-cl clearfix">
+				<label>端口</label>
+				<div class="s1-cl-r">
+					<input id="setting-port" readonly type="text" value="8080">
+				</div>
+			</div>
+			<div class="s1-cl clearfix">
+				<label>地址</label>
+				<div class="s1-cl-r">
+					<input id="setting-url" readonly type="text" value="http://www.baidu.com">
+				</div>
+			</div>
+			<div class="s1-cl clearfix">
+				<label>状态</label>
+				<div class="s1-cl-r">
+					<div class="tog">
+						开<div class="tog-in">关</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="s1-cl-btnw">
+				<button id="setting-submit" class="btn btn-h1 btn-primary">保存</button>
+			</div>
+			
+		</div>
+	</div>
+	<script type="text/javascript" src="lib/ratchet/js/ratchet.min.js"></script>
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var $settingUsername = $('#setting-username'),
+				$settingPassword = $('#setting-password'),
+				$settingPort = $('#setting-port'),
+				$settingUrl = $('#setting-url');
+			
+
+			var data = {
+				username: 'zhong',
+				password: '123456',
+				port: '8084',
+				url: 'http://www.google.com',
+				status: true
+			}
+
+			function init(obj){
+				$settingUsername.val(obj.username);
+				$settingPassword.val(obj.password);
+				$settingPort.val(obj.port);
+				$settingUrl.val(obj.url);
+				if(obj.status){
+					$togIn.addClass('open');
+				}
+			}
+			init(data);
+
+			$('#setting-submit').on('tap',function(){
+				console.log($('.type-setting.active').text());
+			});
+		});
+	</script>
+</body>
+</html>
