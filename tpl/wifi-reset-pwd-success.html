@@ -6,11 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 	<meta name="format-detection" content="telephone=no">
 	<meta http-equiv="pragma" content="no-cache" />
-	<title>密码找回设置</title>
+	<title>密码重置</title>
 	<link rel="stylesheet" href="../resource/lib/ratchet/css/ratchet.min.css">
 	<link rel="stylesheet" href="../resource/lib/ratchet/css/ratchet-theme-android.min.css">
 	<link rel="stylesheet" href="../resource/lib/ratchet/css/ratchet-theme-ios.css">
-	<link rel="stylesheet" href="../resource/css/style.css">">
+	<link rel="stylesheet" href="../resource/css/style.css">
 
 </head>
 <body class="bg">
@@ -19,36 +19,22 @@
 			<a href="wifi-set-question.html" class="icon icon-left pull-left" data-ignore="push"></a>
 			<div class="s1-t">密码重置</div>
 		</header>
-		<div class="s1-cont-in repassword">
+		<div class="s1-cont-in">
 			<div class="s1-cl clearfix">
-				<label>新密码</label>
-				<div class="s1-cl-r change-password">
-					<input  id="reset-password" type="password">
-					<i></i>
-				</div>
-			</div>
-			<div class="s1-cl clearfix">
-				<label>确认新密码</label>
-				<div class="s1-cl-r change-password">
-					<input  id="reset-password2" type="password">
-					<i></i>
+				<label></label>
+				<div class="s1-cl-r">
+					<input id="reset-pwd" readonly type="text" value="密码重置完成请使用123456789">
 				</div>
 			</div>
 			
 			<div class="s1-cl-btnw">
-				<button id="reset-pwd-submit" class="btn btn-h1 btn-primary">保存</button>
+				<button class="btn btn-h1 btn-primary">重新设置</button>
 			</div>
-
 			
 		</div>
 	</div>
 	<script type="text/javascript" src="../resource/js/zepto.min.js"></script>
 	<script type="text/javascript" src="../resource/lib/ratchet/js/ratchet.min.js"></script>
 	<script type="text/javascript" src="../resource/js/common.js"></script>
-	<script type="text/javascript">
-		$('#reset-pwd-submit').on('tap', function(){
-			location.href="wifi-reset-pwd-success.html"
-		})
-	</script>
 </body>
 </html>
