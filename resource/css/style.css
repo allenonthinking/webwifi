@@ -92,6 +92,27 @@ input[readonly]{
 	color:#333;
 	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.2);
 }
+.btn-b{
+	background-color: #e7e7e7;
+	background-image:-webkit-linear-gradient(top, #eff0f1, #cdcfd1);
+	color:#333;
+	outline:none;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.2);
+	text-decoration: none;
+	outline: none;
+	display: block;
+	line-height: 50px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	padding-left: 10px;
+}
+.btn-b:active{
+	background-color: #d0d0d0 ;
+	background-image:-webkit-linear-gradient(top, #cdcfd1, #bdbfc1);
+	color:#333;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.2);
+}
 .s1-cont-in{
 	margin-top: 15px;
 }

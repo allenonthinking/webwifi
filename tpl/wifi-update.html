@@ -41,7 +41,11 @@
 	<script type="text/javascript">
 		$('#file').on('change', function(e){
 			var file = $('#file')[0].files[0];
-			$('.upl').text(file.name);
+			var filename = file.name;
+			var filedir = $('#file').val();
+			console.log("filename :"+filename);
+			console.log("filedir :"+filedir);
+			$('.upl').text(filedir);
 		});
 	</script>
 </body>
