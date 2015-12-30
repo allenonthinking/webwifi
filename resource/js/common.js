@@ -11,7 +11,7 @@ $(function(){
 		}
 	});
 	$('.s-content a').on('tap', function(){
-			$(this).addClass('active').siblings().removeClass('active');
+			$(this).removeClass('active').siblings().addClass('active');
 	});
 
 	var $tog = $('.tog'),
