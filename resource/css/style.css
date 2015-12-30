@@ -155,6 +155,12 @@ input[readonly]{
 .btn-h1{
 	padding:10px 15px;
 }
+.btn-h2{
+	padding: 0 10px;
+	font-size: 12px;
+	line-height: 22px;
+	outline: none;
+}
 .s1-t{
 	line-height: 24px;
 	text-align: center;
