@@ -454,6 +454,11 @@ input[readonly]{
 .repassword .s1-cl .s1-cl-r{
 	padding-left: 75px;
 }
+.wifihelp img{
+	display: block;
+	width: 100%;
+	border:none;
+}
 
 
 
