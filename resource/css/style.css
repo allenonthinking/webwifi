@@ -255,6 +255,25 @@ input[readonly]{
 .zp-content .btn{
 	padding: 10px 15px;
 }
+.zpinfo{
+    position: fixed;
+    left:0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+    display: none;
+}
+.zpinfo-content{
+    width:86%;
+    margin:50px auto 0;
+    padding:20px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+.zpinfo-content .btn{
+    padding: 10px 15px;
+}
 .out-2-sel{
 	border:1px solid #d0d0d0;
 	height: 42px;

@@ -18,24 +18,30 @@
 		<div class="s1-cont-in">
 			<div class="out-lab">接入方式</div>
 			<div class="segmented-control">
-				<a class="control-item active" href="#item1mobile">
+				<a id="item1" class="control-item active" href="#item1mobile">
 					无线
 				</a>
-				<a class="control-item" href="#item2mobile">
+				<a id="item2" class="control-item" href="#item2mobile">
 					有线
 				</a>
-				<a class="control-item" href="#item3mobile">
+				<a id="item3" class="control-item" href="#item3mobile">
 					3/4G
 				</a>
 			</div>
 			<div class="card card-out">
 				<div id="item1mobile" class="control-content active">
-					<div class="out-lab">可用WIFI列表</div>
+					<div class="out-lab">
+                        <div class="content-padded">可用WIFI列表
+                            <span id="refreshoutwifi" class="icon icon-refresh right"></span>
+                        </div>
+                    </div>
 					<div class="wifi-list-wrap">
 						<div class="wifi-item clearfix">
 							<div class="col1">TP-LINK-CAI</div>
 							<div class="col2">
 								<img src="../resource/images/wifi-network-lock-4.png" alt="">
+                                <input type="hidden" name="bssid" value="bassid">
+                                <input type="hidden" name="saved" value="saved" >
 							</div>
 							<div class="col3">
 							</div>
@@ -44,6 +50,8 @@
 							<div class="col1">TP-LINK-CAI</div>
 							<div class="col2">
 								<img src="../resource/images/wifi-network-lock-3.png" alt="">
+                                <input type="hidden" name="bssid" value="bassid">
+                                <input type="hidden" name="saved" value="saved" >
 							</div>
 							<div class="col3">
 							</div>
@@ -52,6 +60,8 @@
 							<div class="col1">TP-LINK-CAI</div>
 							<div class="col2">
 								<img src="../resource/images/wifi-network-lock-2.png" alt="">
+                                <input type="hidden" name="bssid" value="bassid">
+                                <input type="hidden" name="saved" value="saved" >
 							</div>
 							<div class="col3">
 							</div>
@@ -60,6 +70,8 @@
 							<div class="col1">TP-LINK-CAI</div>
 							<div class="col2">
 								<img src="../resource/images/wifi-network-lock-1.png" alt="">
+                                <input type="hidden" name="bssid" value="bassid">
+                                <input type="hidden" name="saved" value="saved" >
 							</div>
 							<div class="col3">
 							</div>
@@ -68,6 +80,8 @@
 							<div class="col1">TP-LINK-CAI</div>
 							<div class="col2">
 								<img src="../resource/images/wifi-network-lock-0.png" alt="">
+                                <input type="hidden" name="bssid" value="bassid">
+                                <input type="hidden" name="saved" value="saved" >
 							</div>
 							<div class="col3">
 							</div>
@@ -76,6 +90,8 @@
 							<div class="col1">TP-LINK-CAI</div>
 							<div class="col2">
 								<img src="../resource/images/wifi-network-4.png" alt="">
+                                <input type="hidden" name="bssid" value="bassid">
+                                <input type="hidden" name="saved" value="saved" >
 							</div>
 							<div class="col3"></div>
 						</div>
@@ -83,6 +99,8 @@
 							<div class="col1">TP-LINK-CAI</div>
 							<div class="col2">
 								<img src="../resource/images/wifi-network-3.png" alt="">
+                                <input type="hidden" name="bssid" value="bassid">
+                                <input type="hidden" name="saved" value="saved" >
 							</div>
 							<div class="col3">
 							</div>
@@ -91,6 +109,8 @@
 							<div class="col1">TP-LINK-CAI</div>
 							<div class="col2">
 								<img src="../resource/images/wifi-network-2.png" alt="">
+                                <input type="hidden" name="bssid" value="bassid">
+                                <input type="hidden" name="saved" value="saved" >
 							</div>
 							<div class="col3">
 							</div>
@@ -99,6 +119,8 @@
 							<div class="col1">TP-LINK-CAI</div>
 							<div class="col2">
 								<img src="../resource/images/wifi-network-1.png" alt="">
+                                <input type="hidden" name="bssid" value="bassid">
+                                <input type="hidden" name="saved" value="saved" >
 							</div>
 							<div class="col3">
 							</div>
@@ -107,6 +129,8 @@
 							<div class="col1">TP-LINK-CAI</div>
 							<div class="col2">
 								<img src="../resource/images/wifi-network-0.png" alt="">
+                                <input type="hidden" name="bssid" value="bassid">
+                                <input type="hidden" name="saved" value="saved">
 							</div>
 							<div class="col3">
 							</div>
@@ -218,17 +242,44 @@
 			</div>
 		</div>
 	</div>
+    <div class="zpinfo">
+        <div class="zpinfo-content">
+            <div class="clearfix">
+                <a _label="conwifi" class="btn btn-primary">连接</a>
+                <a _label="delwifi" class="btn btn-default pull-right">删除</a>
+            </div>
+        </div>
+    </div>
 	<script type="text/javascript" src="../resource/js/zepto.min.js"></script>
 	<script type="text/javascript" src="../resource/lib/ratchet/js/ratchet.min.js"></script>
 	<script type="text/javascript" src="../resource/js/common.js"></script>
 	<script type="text/javascript">
 		$(function(){
+            /* 页面初始化方法 */
+            function pageInit(itemtype){
+                /*
+                *  页面 无线 有线  3/4G  的三个按钮的id 为  item1  item2 item3 (按钮需要保持同级)
+                *  按钮对应div 的id分别为item1mobile  item2mobile item3mobile  (div需要保持同级)
+                *  div是隐藏及按钮是否选中有 样式active决定
+                *  下面的方法作用是 当前控件的样式添加 active样式，同级元素删除active样式
+                */
+                $('#item'+itemtype).addClass('active').siblings().removeClass('active');
+                $('#item'+itemtype+'mobile').addClass('active').siblings().removeClass('active');
+            }
+            /* 1-无线 2-有线 3-3/4G*/
+            var itemtype=3;
+            /* 页面初始化*/
+            pageInit(itemtype);
+
 			/* 无线 */ 
 			var $items = $('.wifi-item'),
 				obj = {};
-
+            /* 选择无线wifi事件 */
 			$items.on('tap', function(){
-				if($(this).hasClass('selected')){
+                // 获取item下的  hidden 值
+                alert($(this).find("input[type=hidden][name=bssid]").val());
+                alert($(this).find("input[type=hidden][name=saved]").val());
+                if($(this).hasClass('selected')){
 					$(this).removeClass('selected');
 					obj.selItem = '';
 				} else {
@@ -237,6 +288,27 @@
 					
 				}
 			});
+
+            /* wifi item滑动事件*/
+            $items.on('swipe', function(){
+                alert($(this).find("input[type=hidden][name=bssid]").val());
+                alert($(this).find("input[type=hidden][name=saved]").val());
+                $('.zpinfo').css({display:'block'});
+            });
+
+            //连接wifi
+            $('[_label="conwifi"]').on('tap', function(){
+                $('.zpinfo').css({display:'none'});
+                $('.zp').css({display:'block'});
+            });
+
+            //删除wifi
+            $('[_label="delwifi"]').on('tap', function(){
+                $items.removeClass('selected');
+                obj.selItem.addClass('selected');
+                $('.zpinfo').css({display:'none'});
+
+            });
 
 			//取消
 			$('[_label="cancel"]').on('tap', function(){
@@ -258,11 +330,17 @@
 				$('#' + $(this).val()).css({display: 'block'});
 			});
 
-			/* 3/4G */ 
-			$('.out-3-sel').on('change',function(){
-				$('.card-3-in').css({display:'none'});
-				$('#' + $(this).val()).css({display: 'block'});
-			});
+			/* 3/4G */
+            $('.out-3-sel').on('change',function(){
+                $('.card-3-in').css({display:'none'});
+                $('#' + $(this).val()).css({display: 'block'});
+            });
+
+            /*  刷新按钮 */
+            $('#refreshoutwifi').on('tap',function(){
+                alert("刷新按钮");
+            });
+
 
 		});
 	</script>

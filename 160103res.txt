@@ -1,0 +1,119 @@
+1 wifi-setting.html
+
+  a. 如何"获取调试web页面右侧按钮的点击事件，并在点击事件中获取当前是“开”还是“关”的状态"
+  b. 如何“设置调试web页面右侧按钮的初始状态，如打开页面时根据参数使其处于打开还是关闭状态”
+
+回复：
+滑动事件 js 从common.js中移到  wifi-setting.html中
+        // 滑动开关控件对象
+        var $tog = $('.tog'),$togIn = $('.tog-in');
+
+        // 调式web界面是否开启
+        var debugstatus = true;
+        // 调试开关初始化
+        if(debugstatus){
+            $togIn.addClass('open');
+        }else{
+            $togIn.removeClass('open');
+        }
+
+        // 滑动事件
+        $('.tog').on('tap',function(){
+            if ($togIn.hasClass('open')) {
+                $togIn.removeClass('open');
+                debugstatus = false;
+            } else {
+                $togIn.addClass('open');
+                debugstatus = true;
+            }
+        });
+
+
+页面初始化根据debugstatus 变量值判断滑动开关是否开启
+通过.tog的tap事件 修改滑动控件状态。 
+
+
+2 有没有办法在地址栏上只显示域名，不在显示其他网页的名称。试着用iframe，手机都是无法满屏显示
+
+
+3 wifi-out.html
+
+  a.“可用WIFI列表”这一行的右侧加一刷新图标，点击该图，弹出alert("hello")
+  b.长按"可用WIFI列表"中的item，弹出下拉菜单项目：连接，删除;
+
+  c. "可用WIFI列表"中item的关联信息
+
+   对于每一项wifi信息，还有一些信息是隐藏的(如wifi的bssid,saved等内容)。如何把item与这些隐藏的信息关联起来？
+   应用场景：选择了某个item后(如弹出密码框)，获取该item的关联数据，执行后续操作
+
+回复：
+a：
+添加刷新按钮 定义事件
+
+           添加页面初始化方法 
+            function pageInit(itemtype){
+                /*
+                *  页面 无线 有线  3/4G  的三个按钮的id 为  item1  item2 item3 (按钮需要保持同级)
+                *  按钮对应div 的id分别为item1mobile  item2mobile item3mobile  (div需要保持同级)
+                *  div是隐藏及按钮是否选中有 样式active决定
+                *  下面的方法作用是 当前控件的样式添加 active样式，同级元素删除active样式
+                */
+                $('#item'+itemtype).addClass('active').siblings().removeClass('active');
+                $('#item'+itemtype+'mobile').addClass('active').siblings().removeClass('active');
+            }
+
+b：
+长按事件定义不好弄，定义了一个滑动事件
+添加一段div  class="zpinfo"
+定义了滑动连接删除事件
+            /* wifi item滑动事件*/
+            $items.on('swipe', function(){
+                alert($(this).find("input[type=hidden][name=bssid]").val());
+                alert($(this).find("input[type=hidden][name=saved]").val());
+                $('.zpinfo').css({display:'block'});
+            });
+
+            //连接wifi
+            $('[_label="conwifi"]').on('tap', function(){
+                $('.zpinfo').css({display:'none'});
+                $('.zp').css({display:'block'});
+            });
+
+            //删除wifi
+            $('[_label="delwifi"]').on('tap', function(){
+                $items.removeClass('selected');
+                obj.selItem.addClass('selected');
+                $('.zpinfo').css({display:'none'});
+
+            });
+
+c:
+页面交互的值传递使用了 hidden项做的
+按照页面上例子可取到值
+$(this).find("input[type=hidden][name=bssid]").val()
+
+
+4 添加一个页面，内容详见给出的图片描述 
+
+回复：
+index.html页面添加帮助信息页面
+wifi-help.html
+
+5 语言选择按钮的颜色
+
+  对调下选中和未选中的颜色;
+  同时告诉下修改哪个文件哪个css,也许后面对那个深黑色的颜色进行修改
+
+回复：
+语言切换事件从 common.js 移入  index.html中
+	$('.s-content a').on('tap', function(){
+			$(this).removeClass('lgactive').siblings().addClass('lgactive');
+	});
+
+添加自定义样式 lgactive
+style.css中
+.btn.lgactive {
+    color: #fff;
+    background-color: #929292;
+}
+深黑色的颜色 由 background-color: #929292; 属性决定
