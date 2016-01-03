@@ -45,7 +45,33 @@
 	<script type="text/javascript">
 		$('#setting-submit').on('tap', function(){
 			location.href="wifi-set-question.html";
-		})
+		});
+
+
+        // 滑动开关控件对象
+        var $tog = $('.tog'),$togIn = $('.tog-in');
+
+        // 调式web界面是否开启
+        var debugstatus = true;
+        // 调试开关初始化
+        if(debugstatus){
+            $togIn.addClass('open');
+        }else{
+            $togIn.removeClass('open');
+        }
+
+        // 滑动事件
+        $('.tog').on('tap',function(){
+            if ($togIn.hasClass('open')) {
+                $togIn.removeClass('open');
+                debugstatus = false;
+            } else {
+                $togIn.addClass('open');
+                debugstatus = true;
+            }
+        });
+
+
 	</script>
 </body>
 </html>
