@@ -12,7 +12,7 @@
 </head>
 <body class="bg">
 	<div class="s-content">
-	  <a href="#" class="btn pull-right active"  data-ignore="push">English</a>
+	  <a href="#" class="btn pull-right lgactive"  data-ignore="push">English</a>
 	  <a href="#" class="btn pull-right"  data-ignore="push">中文</a>
 	</div>  
 	<div class="s0-content">
@@ -29,5 +29,10 @@
 	<script type="text/javascript" src="../resource/js/zepto.min.js"></script>
 	<script type="text/javascript" src="../resource/lib/ratchet/js/ratchet.min.js"></script>
 	<script type="text/javascript" src="../resource/js/common.js"></script>
+    <script type="text/javascript">
+        $('.s-content a').on('tap', function(){
+            $(this).removeClass('lgactive').siblings().addClass('lgactive');
+        });
+    </script>
 </body>
 </html>

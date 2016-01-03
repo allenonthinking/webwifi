@@ -10,7 +10,4 @@ $(function(){
 			$(this).removeClass('open');
 		}
 	});
-	$('.s-content a').on('tap', function(){
-			$(this).removeClass('active').siblings().addClass('active');
-	});
 })

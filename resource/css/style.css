@@ -347,7 +347,7 @@ input[readonly]{
 .wifiversion{
 	font-size: 12px;
 	color:#666;
-	padding: 100px;
+	padding: 80px;
 	margin:0 auto;
 }
 .version{
@@ -459,7 +459,10 @@ input[readonly]{
 	width: 100%;
 	border:none;
 }
-
+.btn.lgactive {
+    color: #fff;
+    background-color: #929292;
+}
 
 
 
