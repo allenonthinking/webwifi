@@ -75,7 +75,17 @@
 				$settingPassword = $('#setting-password'),
 				$settingPort = $('#setting-port'),
 				$settingUrl = $('#setting-url');
-			
+     				  // 滑动开关控件对象
+        var $tog = $('.tog'),$togIn = $('.tog-in');
+
+      				  // 滑动事件
+				$('.tog').on('tap',function(){
+				    if ($togIn.hasClass('open')) {
+					$togIn.removeClass('open');
+				    } else {
+					$togIn.addClass('open');
+				    }
+				});			
 
 			var data = {
 				username: 'zhong',
